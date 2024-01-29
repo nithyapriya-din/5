@@ -1,0 +1,80 @@
+Print odd numbers in an array:
+javascript
+
+// Anonymous function
+const printOddNumbers = function(arr) {
+  arr.filter(num => num % 2 !== 0).forEach(oddNum => console.log(oddNum));
+};
+
+// IIFE
+(function(arr) {
+  arr.filter(num => num % 2 !== 0).forEach(oddNum => console.log(oddNum));
+})([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+Convert all the strings to title caps in a string array:
+javascript
+
+// Anonymous function
+const convertToTitleCaps = function(arr) {
+  return arr.map(str => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase());
+};
+
+// IIFE
+const titleCapsArray = (function(arr) {
+  return arr.map(str => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase());
+})(["apple", "banana", "cherry"]);
+console.log(titleCapsArray);
+Sum of all numbers in an array:
+javascript
+
+// Anonymous function
+const sumOfNumbers = function(arr) {
+  return arr.reduce((sum, num) => sum + num, 0);
+};
+
+// IIFE
+const result = (function(arr) {
+  return arr.reduce((sum, num) => sum + num, 0);
+})([1, 2, 3, 4, 5]);
+console.log(result);
+Return all the prime numbers in an array:
+javascript
+
+// Anonymous function
+const isPrime = function(num) {
+  if (num <= 1) return false;
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) return false;
+  }
+  return true;
+};
+
+const getPrimeNumbers = function(arr) {
+  return arr.filter(num => isPrime(num));
+};
+
+// IIFE
+const primeNumbersArray = (function(arr) {
+  return arr.filter(num => isPrime(num));
+})([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+console.log(primeNumbersArray);
+Return all the palindromes in an array:
+javascript
+
+// Anonymous function
+const isPalindrome = function(str) {
+  return str === str.split('').reverse().join('');
+};
+
+const getPalindromes = function(arr) {
+  return arr.filter(word => isPalindrome(word));
+};
+
+// IIFE
+const palindromesArray = (function(arr) {
+  return arr.filter(word => isPalindrome(word));
+})(["level", "hello", "radar", "world"]);
+console.log(palindromesArray);
+
+
+
+
