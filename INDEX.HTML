@@ -1,0 +1,54 @@
+Do the below programs in arrow functions.:
+Print odd numbers in an array:
+javascript
+const printOddNumbers = (arr) => arr.filter(num => num % 2 !== 0).forEach(oddNum => console.log(oddNum));
+
+// Example usage
+const numbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+printOddNumbers(numbersArray);
+Convert all the strings to title caps in a string array:
+javascript
+Copy code
+const convertToTitleCaps = (arr) => arr.map(str => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase());
+
+// Example usage
+const stringArray = ["apple", "banana", "cherry"];
+const titleCapsArray = convertToTitleCaps(stringArray);
+console.log(titleCapsArray);
+Sum of all numbers in an array:
+javascript
+Copy code
+const sumOfNumbers = (arr) => arr.reduce((sum, num) => sum + num, 0);
+
+// Example usage
+const numbersArray = [1, 2, 3, 4, 5];
+const result = sumOfNumbers(numbersArray);
+console.log(result);
+Return all the prime numbers in an array:
+javascript
+Copy code
+const isPrime = (num) => {
+  if (num <= 1) return false;
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) return false;
+  }
+  return true;
+};
+
+const getPrimeNumbers = (arr) => arr.filter(num => isPrime(num));
+
+// Example usage
+const numbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const primeNumbersArray = getPrimeNumbers(numbersArray);
+console.log(primeNumbersArray);
+Return all the palindromes in an array:
+javascript
+Copy code
+const isPalindrome = (str) => str === str.split('').reverse().join('');
+
+const getPalindromes = (arr) => arr.filter(word => isPalindrome(word));
+
+// Example usage
+const wordsArray = ["level", "hello", "radar", "world"];
+const palindromesArray = getPalindromes(wordsArray);
+console.log(palindromesArray);
